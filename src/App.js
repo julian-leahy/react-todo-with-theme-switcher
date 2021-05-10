@@ -20,7 +20,7 @@ function App() {
           <TodoItem id={2} />
         </ul>
         <ListFooter />
-        <div className="filter-controls">
+        <div className="filter-controls item">
           <FilterBtn name={'all'} />
           <FilterBtn name={'active'} />
           <FilterBtn name={'completed'} />

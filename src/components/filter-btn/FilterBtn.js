@@ -2,7 +2,7 @@ import './FilterBtn.css';
 
 function FilterBtn({ name }) {
     return (
-        <button className="btn btn__filter btn__filter-active">{name}</button>
+        <button className="btn btn__filter">{name}</button>
     )
 }
 

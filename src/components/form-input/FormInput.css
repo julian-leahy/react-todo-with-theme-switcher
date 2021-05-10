@@ -4,13 +4,12 @@ form {
 }
 
 .input__lg {
-    width: 100%;
-    height: var(--items);
     border-radius: var(--radius);
     border: none;
     padding-left: 5.5rem;
     font-size: 1.6rem;
     color: #96959A;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .btn__add {

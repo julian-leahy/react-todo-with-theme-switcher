@@ -1,21 +1,33 @@
 .App {
   width: 100vw;
   height: 100vh;
-  background-color: #F9F9F9;
+  background-color: var(--bg);
 }
 
-.hero {
+body.light .hero {
+  background-image: url('./images/bg-mobile-light.jpg');
+}
+
+body.dark .hero {
+  background-image: url('./images/bg-mobile-dark.jpg');
+}
+
+body .hero {
   width: 100%;
   max-width: var(--smScreen);
   height: 20rem;
   margin: 0 auto;
-  background-image: url('./images/bg-mobile-light.jpg');
   background-repeat: no-repeat;
 }
 
 @media screen and (min-width: 375px) {
-  .hero {
+  body.light .hero {
     background-image: url('./images/bg-desktop-light.jpg');
+  }
+  body.dark .hero {
+    background-image: url('./images/bg-desktop-dark.jpg');
+  }
+  body .hero {
     max-width: var(--lgScreen);
     height: 30rem;
   }

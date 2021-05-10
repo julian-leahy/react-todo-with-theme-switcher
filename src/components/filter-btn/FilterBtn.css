@@ -1,7 +1,4 @@
 .filter-controls {
-    width: 100%;
-    background-color: #fff;
-    height: var(--items);
     display: flex;
     justify-content: center;
     border-radius: var(--radius);
@@ -11,7 +8,7 @@
     font-size: 20px;
     text-transform: capitalize;
     margin: 0 20px;
-    color: #93939D;
+    color: var(--footer);
 }
 
 .btn__filter-active {

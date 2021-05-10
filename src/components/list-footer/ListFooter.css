@@ -1,7 +1,4 @@
 .todo-list-footer {
-    width: 100%;
-    height: var(--items);
-    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,5 +9,5 @@
 
 .todo-list-footer>* {
     font-size: 1.6rem;
-    color: #9F9FA1;
+    color: var(--footer);
 }

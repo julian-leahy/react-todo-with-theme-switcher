@@ -2,7 +2,7 @@ import './TodoItem.css';
 
 function TodoItem({ id }) {
     return (
-        <li className="todo-item">
+        <li className="todo-item item">
             <div className="custom-cb">
                 <input type="checkbox" id={`todo-${id}`} />
                 <label htmlFor={`todo-${id}`}>

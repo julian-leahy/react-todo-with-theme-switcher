@@ -2,7 +2,7 @@ import './ListFooter.css';
 
 function ListFooter() {
     return (
-        <div className="todo-list-footer">
+        <div className="todo-list-footer item">
             <div className="remaining">
                 3 items left
             </div>

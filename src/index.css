@@ -4,6 +4,38 @@
     --lgScreen: 1445px;
     --items: 5rem;
     --radius: 0.8rem;
+    /* light theme */
+    --lightBG: #F9F9F9;
+    --lightItem: #FFF;
+    --lightBorder: #E6E5EA;
+    --lightLabel: #73737B;
+    --lightCB: #E6E5EA;
+    --lightFooter: #9F9FA1;
+    /* dark theme */
+    --darkBG: #171723;
+    --darkItem: #25273D;
+    --darkBorder: #38394F;
+    --darkLabel: #B0B1C9;
+    --darkCB: #303248;
+    --darkFooter: #505269;
+}
+
+body.light {
+    --bg: var(--lightBG);
+    --itemBG: var(--lightItem);
+    --itemBorder: var(--lightBorder);
+    --label: var(--lightLabel);
+    --cbox: var(--lightCB);
+    --footer: var(--lightFooter);
+}
+
+body.dark {
+    --bg: var(--darkBG);
+    --itemBG: var(--darkItem);
+    --itemBorder: var(--darkBorder);
+    --label: var(--darkLabel);
+    --cbox: var(--darkCB);
+    --footer: var(--darkFooter);
 }
 
 /* Reset */
@@ -48,4 +80,10 @@ button, .btn {
     background-color: transparent;
     border: none;
     font-family: 'Josefin Sans', sans-serif;
+}
+
+.item {
+    width: 100%;
+    height: var(--items);
+    background-color: var(--itemBG);
 }

@@ -3,10 +3,7 @@
 }
 
 .todo-item {
-    width: 100%;
-    height: var(--items);
-    background-color: #fff;
-    border-bottom: 2px solid #E6E5EA;
+    border-bottom: 2px solid var(--itemBorder);
     position: relative;
 }
 
@@ -54,13 +51,13 @@
     padding: 15px;
     cursor: pointer;
     touch-action: manipulation;
-    color: #73737B;
+    color: var(--label);
 }
 
 .custom-cb>label::before {
     content: "";
     position: absolute;
-    border: 2px solid #E6E5EA;
+    border: 2px solid var(--cbox);
     background: transparent;
     border-radius: 50%;
 }
