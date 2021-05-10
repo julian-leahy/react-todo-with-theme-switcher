@@ -1,0 +1,29 @@
+/* for screenreaders */
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+.light-theme {
+    background-image: url('./assets/icon-moon.svg');
+}
+
+.dark-theme {
+    background-image: url('./assets/icon-sun.svg');
+}
+
+.toggle-theme {
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    width: 26px;
+    height: 26px;
+}
