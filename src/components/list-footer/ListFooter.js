@@ -1,0 +1,14 @@
+import './ListFooter.css';
+
+function ListFooter() {
+    return (
+        <div className="todo-list-footer">
+            <div className="remaining">
+                3 items left
+            </div>
+            <button className="clear">Clear Completes</button>
+        </div>
+    )
+}
+
+export default ListFooter;

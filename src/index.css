@@ -1,0 +1,37 @@
+:root {
+    --smScreen: 375px;
+    --mdScreen: 560px;
+    --lgScreen: 1445px;
+}
+
+/* Reset */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+*:focus {
+    outline: 3px dashed #228bec;
+    outline-offset: 0;
+}
+
+html {
+    font: 62.5% / 1.15 sans-serif;
+}
+
+h1, h2 {
+    margin-bottom: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    margin: 0 auto;
+    font: 1.8rem/1.25 'Josefin Sans', sans-serif;
+}
