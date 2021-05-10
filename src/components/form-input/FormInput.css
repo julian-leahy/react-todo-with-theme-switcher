@@ -1,0 +1,23 @@
+form {
+    width: 100%;
+    margin-bottom: 1.8rem;
+}
+
+.input__lg {
+    width: 100%;
+    height: var(--items);
+    border-radius: var(--radius);
+    border: none;
+    padding-left: 5.5rem;
+    font-size: 1.6rem;
+    color: #96959A;
+}
+
+.btn__add {
+    position: absolute;
+    height: var(--items);
+    font-size: 16px;
+    right: 30px;
+    color: #73737B;
+    cursor: pointer;
+}

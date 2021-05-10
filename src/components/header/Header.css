@@ -1,16 +1,6 @@
-.hero {
-    width: 100%;
-    max-width: var(--smScreen);
-    height: 20rem;
-    margin: 0 auto;
-    background-image: url('./../../images/bg-mobile-light.jpg');
-    background-repeat: no-repeat;
-}
-
-@media screen and (min-width: 375px) {
-    .hero {
-        background-image: url('./../../images/bg-desktop-light.jpg');
-        max-width: var(--lgScreen);
-        height: 30rem;
-    }
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
 }

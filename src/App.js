@@ -15,15 +15,15 @@ function App() {
           <FormInput />
         </div>
         <ul className="todo-list">
-          <TodoItem />
-          <TodoItem />
-          <TodoItem />
+          <TodoItem id={0} />
+          <TodoItem id={1} />
+          <TodoItem id={2} />
         </ul>
         <ListFooter />
         <div className="filter-controls">
-          <FilterBtn />
-          <FilterBtn />
-          <FilterBtn />
+          <FilterBtn name={'all'} />
+          <FilterBtn name={'active'} />
+          <FilterBtn name={'completed'} />
         </div>
       </div>
     </div>

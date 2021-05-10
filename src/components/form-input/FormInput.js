@@ -3,8 +3,12 @@ import './FormInput.css';
 function FormInput() {
     return (
         <form>
-            <input type="text" />
-            <button type="submit">Add</button>
+            <input
+                type="text"
+                aria-label="Create a new todo item"
+                className="input__lg"
+                placeholder="Create a new todo..." />
+            <button className="btn btn__add" type="submit">Add</button>
         </form>
     )
 }

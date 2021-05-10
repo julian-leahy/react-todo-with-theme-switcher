@@ -1,8 +1,8 @@
 import './FilterBtn.css';
 
-function FilterBtn() {
+function FilterBtn({ name }) {
     return (
-        <button className="all">All</button>
+        <button className="btn btn__filter btn__filter-active">{name}</button>
     )
 }
 

@@ -1,6 +1,29 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  background-color: #F9F9F9;
+}
+
+.hero {
+  width: 100%;
+  max-width: var(--smScreen);
+  height: 20rem;
+  margin: 0 auto;
+  background-image: url('./images/bg-mobile-light.jpg');
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 375px) {
+  .hero {
+    background-image: url('./images/bg-desktop-light.jpg');
+    max-width: var(--lgScreen);
+    height: 30rem;
+  }
+}
+
 .container {
   position: absolute;
-  top: 4.5rem;
+  top: 4rem;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;

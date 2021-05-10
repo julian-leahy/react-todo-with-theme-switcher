@@ -1,0 +1,19 @@
+.filter-controls {
+    width: 100%;
+    background-color: #fff;
+    height: var(--items);
+    display: flex;
+    justify-content: center;
+    border-radius: var(--radius);
+}
+
+.btn__filter {
+    font-size: 20px;
+    text-transform: capitalize;
+    margin: 0 20px;
+    color: #93939D;
+}
+
+.btn__filter-active {
+    color: #3C74ED;
+}

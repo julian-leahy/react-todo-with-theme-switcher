@@ -6,7 +6,7 @@ function ListFooter() {
             <div className="remaining">
                 3 items left
             </div>
-            <button className="clear">Clear Completes</button>
+            <button className="clear">Clear Completed</button>
         </div>
     )
 }

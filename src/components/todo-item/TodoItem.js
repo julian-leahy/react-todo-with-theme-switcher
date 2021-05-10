@@ -1,18 +1,15 @@
 import './TodoItem.css';
 
-function TodoItem() {
+function TodoItem({ id }) {
     return (
         <li className="todo-item">
             <div className="custom-cb">
-                <input type="checkbox" id="todo-0" />
-                <label htmlFor="todo-0">
+                <input type="checkbox" id={`todo-${id}`} />
+                <label htmlFor={`todo-${id}`}>
                     One
                 </label>
             </div>
-            <div className="btn-group">
-                <button className="edit">Edit</button>
-                <button className="delete">Delete</button>
-            </div>
+            <button className="btn btn__delete"></button>
         </li>
     )
 }

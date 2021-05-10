@@ -2,6 +2,8 @@
     --smScreen: 375px;
     --mdScreen: 560px;
     --lgScreen: 1445px;
+    --items: 5rem;
+    --radius: 0.8rem;
 }
 
 /* Reset */
@@ -34,4 +36,16 @@ body {
     width: 100%;
     margin: 0 auto;
     font: 1.8rem/1.25 'Josefin Sans', sans-serif;
+}
+
+.title {
+    color: #fff;
+    letter-spacing: 1rem;
+    padding-top: 1rem;
+}
+
+button, .btn {
+    background-color: transparent;
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
 }
