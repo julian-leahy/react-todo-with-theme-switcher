@@ -3,7 +3,7 @@
 - Responsive
 - Accessible
 - Light & Dark mode
-- Tests
+- Add Tests
 
 ![](todo.gif)
 
