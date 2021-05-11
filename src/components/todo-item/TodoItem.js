@@ -1,12 +1,12 @@
 import './TodoItem.css';
 
-function TodoItem({ id }) {
+function TodoItem({ id, name, completed }) {
     return (
         <li className="todo-item item">
             <div className="custom-cb">
-                <input type="checkbox" id={`todo-${id}`} />
+                <input type="checkbox" id={`todo-${id}`} defaultChecked={completed} />
                 <label htmlFor={`todo-${id}`}>
-                    One
+                    {name}
                 </label>
             </div>
             <button className="btn btn__delete"></button>

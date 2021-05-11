@@ -5,7 +5,8 @@ import Header from './components/header/Header';
 import ListFooter from './components/list-footer/ListFooter';
 import TodoItem from './components/todo-item/TodoItem';
 
-function App() {
+function App({ data }) {
+  const tasks = data.map(({ id, name, completed }) => <TodoItem key={id} id={id} name={name} completed={completed} />)
   return (
     <div className="App">
       <div className="hero"></div>
@@ -15,9 +16,7 @@ function App() {
           <FormInput />
         </div>
         <ul className="todo-list">
-          <TodoItem id={0} />
-          <TodoItem id={1} />
-          <TodoItem id={2} />
+          {tasks}
         </ul>
         <ListFooter />
         <div className="filter-controls item">
