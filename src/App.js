@@ -105,8 +105,11 @@ function App() {
         <ul className="todo-list">
           {tasks}
         </ul>
-        <ListFooter numbTasks={numbTasks} clearCompleted={clearCompleted} />
-        <div className="filter-controls item">
+        {
+          numbTasks > 0 && <ListFooter numbTasks={numbTasks} clearCompleted={clearCompleted} />
+        }
+
+        <div className={`${numbTasks === 0 ? 'hidden' : 'filter-controls item'}`}>
           {
             FILTER_BTNS.map((name, idx) => (
               <FilterBtn key={idx} name={name} filterItems={filterItems} filterBy={filterBy} />
