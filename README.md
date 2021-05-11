@@ -1,4 +1,9 @@
-# Responsive, accessible todo app with light and dark theme mode
+# todo app
+
+- Responsive
+- Accessible
+- Light & Dark mode
+- Tests
 
 ## Available Scripts
 
