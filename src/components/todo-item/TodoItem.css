@@ -54,6 +54,10 @@
     color: var(--label);
 }
 
+.custom-cb>label::first-letter {
+    text-transform: capitalize;
+}
+
 .custom-cb>label::before {
     content: "";
     position: absolute;
