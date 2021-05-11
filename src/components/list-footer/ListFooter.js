@@ -1,10 +1,13 @@
 import './ListFooter.css';
 
-function ListFooter() {
+function ListFooter({ numbTasks }) {
+
+    const remainingItems = numbTasks === 1 ? `${numbTasks} item left` : `${numbTasks} items left`;
+
     return (
         <div className="todo-list-footer item">
             <div className="remaining">
-                3 items left
+                {remainingItems}
             </div>
             <button className="clear">Clear Completed</button>
         </div>

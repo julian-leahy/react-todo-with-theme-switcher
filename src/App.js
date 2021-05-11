@@ -11,6 +11,8 @@ function App({ data }) {
 
   const [taskList, setTaskList] = useState(data || []);
 
+  const numbTasks = taskList.length;
+
   const newTask = (name) => {
     const task = {
       id: `todo-${nanoid()}`,
@@ -38,7 +40,7 @@ function App({ data }) {
         <ul className="todo-list">
           {tasks}
         </ul>
-        <ListFooter />
+        <ListFooter numbTasks={numbTasks} />
         <div className="filter-controls item">
           <FilterBtn name={'all'} />
           <FilterBtn name={'active'} />
