@@ -1,10 +1,14 @@
 form {
     width: 100%;
     margin-bottom: 1.8rem;
+    display: flex;
+    background-color: var(--itemBG);
+    border-radius: var(--radius);
 }
 
 .input__lg {
-    border-radius: var(--radius);
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
     border: none;
     padding-left: 5.5rem;
     font-size: 1.6rem;
@@ -13,10 +17,22 @@ form {
 }
 
 .btn__add {
-    position: absolute;
-    height: var(--items);
+    height: 5rem;
     font-size: 16px;
     right: 30px;
     color: #73737B;
     cursor: pointer;
+    background-color: var(--itemBG);
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    padding-right: 20px;
+}
+
+@media screen and (min-width: 560px) {
+    .btn__add {
+        height: 6.5rem;
+    }
+    .input__lg {
+        font-size: 1.8rem;
+    }
 }

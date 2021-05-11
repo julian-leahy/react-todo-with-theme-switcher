@@ -101,3 +101,21 @@
     top: 15px;
     cursor: pointer;
 }
+
+@media screen and (min-width: 560px) {
+    .custom-cb {
+        font-size: 1.8rem;
+    }
+    .custom-cb>label::before, .custom-cb>input[type="checkbox"] {
+        top: 22px;
+    }
+    .custom-cb>label {
+        padding: 25px 15px;
+    }
+    .btn__delete {
+        top: 25px;
+    }
+    .custom-cb>label::after {
+        top: 28px;
+    }
+}

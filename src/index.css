@@ -1,8 +1,6 @@
 :root {
     --smScreen: 375px;
-    --mdScreen: 560px;
     --lgScreen: 1445px;
-    --items: 5rem;
     --radius: 0.8rem;
     /* light theme */
     --lightBG: #F9F9F9;
@@ -84,6 +82,12 @@ button, .btn {
 
 .item {
     width: 100%;
-    height: var(--items);
+    height: 5rem;
     background-color: var(--itemBG);
+}
+
+@media screen and (min-width: 560px) {
+    .item {
+        height: 6.5rem;
+    }
 }
