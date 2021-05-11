@@ -1,8 +1,12 @@
 import './FilterBtn.css';
 
-function FilterBtn({ name }) {
+function FilterBtn({ name, filterItems, filterBy }) {
+    const active = name === filterBy;
     return (
-        <button className="btn btn__filter">{name}</button>
+        <button
+            className={`${active ? 'btn__filter-active' : ''} btn btn__filter`}
+            aria-pressed={active}
+            onClick={() => filterItems(name)}>{name}</button>
     )
 }
 

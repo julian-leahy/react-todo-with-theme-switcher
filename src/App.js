@@ -7,9 +7,18 @@ import ListFooter from './components/list-footer/ListFooter';
 import TodoItem from './components/todo-item/TodoItem';
 import { nanoid } from 'nanoid';
 
+const FILTER = {
+  all: () => true,
+  active: task => task.completed === false,
+  completed: task => task.completed === true
+}
+
+const FILTER_BTNS = Object.keys(FILTER)
+
 function App({ data }) {
 
   const [taskList, setTaskList] = useState(data || []);
+  const [filterBy, setFilterBy] = useState('all');
 
   const numbTasks = taskList.length;
 
@@ -47,7 +56,11 @@ function App({ data }) {
     setTaskList(clearAll);
   }
 
-  const tasks = taskList.map(({ id, name, completed }) => (
+  const filterItems = (filter) => {
+    setFilterBy(filter);
+  }
+
+  const tasks = taskList.filter(FILTER[filterBy]).map(({ id, name, completed }) => (
     <TodoItem
       key={id}
       id={id}
@@ -69,9 +82,11 @@ function App({ data }) {
         </ul>
         <ListFooter numbTasks={numbTasks} clearCompleted={clearCompleted} />
         <div className="filter-controls item">
-          <FilterBtn name={'all'} />
-          <FilterBtn name={'active'} />
-          <FilterBtn name={'completed'} />
+          {
+            FILTER_BTNS.map((name, idx) => (
+              <FilterBtn key={idx} name={name} filterItems={filterItems} filterBy={filterBy} />
+            ))
+          }
         </div>
       </div>
     </div>
