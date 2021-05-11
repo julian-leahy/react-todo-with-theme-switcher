@@ -46,3 +46,10 @@ body .hero {
   max-width: 54rem;
   padding: 0 1.5rem;
 }
+
+.drag-text {
+  text-align: center;
+  font-size: 1.6rem;
+  color: var(--footer);
+  margin-top: 1.6em;
+}

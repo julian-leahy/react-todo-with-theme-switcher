@@ -139,6 +139,7 @@ function App() {
               ))
             }
           </div>
+          <h2 className="drag-text">Drag items to reorder</h2>
         </div>
       </div>
     </div>
