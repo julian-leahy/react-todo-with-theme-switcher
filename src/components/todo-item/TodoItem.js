@@ -1,6 +1,6 @@
 import './TodoItem.css';
 
-function TodoItem({ id, name, completed }) {
+function TodoItem({ id, name, completed, deleteItem }) {
     return (
         <li className="todo-item item">
             <div className="custom-cb">
@@ -9,7 +9,9 @@ function TodoItem({ id, name, completed }) {
                     {name}
                 </label>
             </div>
-            <button className="btn btn__delete"></button>
+            <button
+                className="btn btn__delete"
+                onClick={() => deleteItem(id)}></button>
         </li>
     )
 }

@@ -15,11 +15,16 @@ function App({ data }) {
 
   const newTask = (name) => {
     const task = {
-      id: `todo-${nanoid()}`,
+      id: nanoid(),
       name,
       completed: false
     }
     setTaskList([...taskList, task])
+  }
+
+  const deleteItem = (id) => {
+    const remaining = taskList.filter(task => task.id !== id);
+    setTaskList(remaining);
   }
 
   const tasks = taskList.map(({ id, name, completed }) => (
@@ -27,7 +32,8 @@ function App({ data }) {
       key={id}
       id={id}
       name={name}
-      completed={completed} />));
+      completed={completed}
+      deleteItem={deleteItem} />));
 
   return (
     <div className="App">
