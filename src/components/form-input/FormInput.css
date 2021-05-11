@@ -16,6 +16,10 @@ form {
     font-family: 'Josefin Sans', sans-serif;
 }
 
+.input__lg:focus, .btn__add:focus {
+    z-index: 2;
+}
+
 .btn__add {
     height: 5rem;
     font-size: 16px;
