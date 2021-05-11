@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import FilterBtn from './components/filter-btn/FilterBtn';
 import FormInput from './components/form-input/FormInput';
@@ -13,14 +13,20 @@ const FILTER = {
   completed: task => task.completed === true
 }
 
-const FILTER_BTNS = Object.keys(FILTER)
+const FILTER_BTNS = Object.keys(FILTER);
 
-function App({ data }) {
+const INITIALSTATE = JSON.parse(localStorage.getItem('todoList')) || [];
 
-  const [taskList, setTaskList] = useState(data || []);
+function App() {
+
+  const [taskList, setTaskList] = useState(INITIALSTATE);
   const [filterBy, setFilterBy] = useState('all');
 
   const numbTasks = taskList.length;
+
+  useEffect(() => {
+    localStorage.setItem('todoList', JSON.stringify(taskList));
+  }, [taskList])
 
   /**
    * add a new todo item
