@@ -9,7 +9,7 @@ function TodoItem({ id, name, completed, deleteItem, toggleCompleted }) {
                     type="checkbox"
                     id={`todo-${id}`}
                     onChange={() => toggleCompleted(id)}
-                    defaultChecked={completed} />
+                    checked={completed} />
                 <label htmlFor={`todo-${id}`}>
                     {name}
                 </label>

@@ -1,6 +1,6 @@
 import './ListFooter.css';
 
-function ListFooter({ numbTasks }) {
+function ListFooter({ numbTasks, clearCompleted }) {
 
     const remainingItems = numbTasks === 1 ? `${numbTasks} item left` : `${numbTasks} items left`;
 
@@ -9,7 +9,11 @@ function ListFooter({ numbTasks }) {
             <div className="remaining">
                 {remainingItems}
             </div>
-            <button className="clear">Clear Completed</button>
+            <button
+                className="clear"
+                onClick={clearCompleted}>
+                Clear Completed
+            </button>
         </div>
     )
 }

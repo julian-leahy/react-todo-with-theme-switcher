@@ -78,6 +78,7 @@ button, .btn {
     background-color: transparent;
     border: none;
     font-family: 'Josefin Sans', sans-serif;
+    cursor: pointer;
 }
 
 .item {

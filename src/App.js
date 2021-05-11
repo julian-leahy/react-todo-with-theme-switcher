@@ -37,6 +37,16 @@ function App({ data }) {
     setTaskList(updatedList);
   }
 
+  const clearCompleted = () => {
+    const clearAll = taskList.map(task => {
+      if (task.completed) {
+        return { ...task, completed: false }
+      }
+      return task;
+    })
+    setTaskList(clearAll);
+  }
+
   const tasks = taskList.map(({ id, name, completed }) => (
     <TodoItem
       key={id}
@@ -57,7 +67,7 @@ function App({ data }) {
         <ul className="todo-list">
           {tasks}
         </ul>
-        <ListFooter numbTasks={numbTasks} />
+        <ListFooter numbTasks={numbTasks} clearCompleted={clearCompleted} />
         <div className="filter-controls item">
           <FilterBtn name={'all'} />
           <FilterBtn name={'active'} />
