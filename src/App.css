@@ -36,9 +36,13 @@ body .hero {
 .container {
   position: absolute;
   top: 4rem;
-  left: 50%;
-  transform: translateX(-50%);
   width: 100%;
-  padding: 0 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.centered {
+  width: 100%;
   max-width: 54rem;
+  padding: 0 1.5rem;
 }

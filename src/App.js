@@ -112,34 +112,34 @@ function App() {
     <div className="App">
       <div className="hero"></div>
       <div className="container">
-
-        <Header />
-        <div className="todo">
-          <FormInput newTask={newTask} />
-        </div>
-        <DragDropContext onDragEnd={handleOnDragEnd}>
-          <Droppable droppableId="todos">
-            {(provided) =>
-              <ul className="todo-list" {...provided.droppableProps}
-                ref={provided.innerRef}>
-                {tasks}
-                {provided.placeholder}
-              </ul>
-            }
-          </Droppable>
-        </DragDropContext>
-        {
-          numbTasks > 0 && <ListFooter numbTasks={numbTasks} clearCompleted={clearCompleted} />
-        }
-
-        <div data-testid='filters' className={`${numbTasks === 0 ? 'hidden' : 'filter-controls item'}`}>
+        <div className="centered">
+          <Header />
+          <div className="todo">
+            <FormInput newTask={newTask} />
+          </div>
+          <DragDropContext onDragEnd={handleOnDragEnd}>
+            <Droppable droppableId="todos">
+              {(provided) =>
+                <ul className="todo-list" {...provided.droppableProps}
+                  ref={provided.innerRef}>
+                  {tasks}
+                  {provided.placeholder}
+                </ul>
+              }
+            </Droppable>
+          </DragDropContext>
           {
-            FILTER_BTNS.map((name, idx) => (
-              <FilterBtn key={idx} name={name} filterItems={filterItems} filterBy={filterBy} />
-            ))
+            numbTasks > 0 && <ListFooter numbTasks={numbTasks} clearCompleted={clearCompleted} />
           }
-        </div>
 
+          <div data-testid='filters' className={`${numbTasks === 0 ? 'hidden' : 'filter-controls item'}`}>
+            {
+              FILTER_BTNS.map((name, idx) => (
+                <FilterBtn key={idx} name={name} filterItems={filterItems} filterBy={filterBy} />
+              ))
+            }
+          </div>
+        </div>
       </div>
     </div>
   );
