@@ -5,7 +5,7 @@ function ListFooter({ numbTasks, clearCompleted }) {
     const remainingItems = numbTasks === 1 ? `${numbTasks} item left` : `${numbTasks} items left`;
 
     return (
-        <div className="todo-list-footer item">
+        <div className="todo-list-footer item" data-testid="list-footer">
             <div className="remaining">
                 {remainingItems}
             </div>
