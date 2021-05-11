@@ -30,7 +30,7 @@ function Theme() {
             aria-label="toggle theme"
             className={`${theme === lightTheme ? 'light-theme' : 'dark-theme'} toggle-theme`}
             onClick={toggleTheme}>
-            <span className="visually-hidden">Toggle Theme between light and dark mode</span>
+            <span className="visually-hidden">{`${theme === lightTheme ? 'switch to dark theme' : 'switch to light theme'}`}</span>
         </button>
     )
 }
