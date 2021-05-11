@@ -20,11 +20,21 @@ function App({ data }) {
       completed: false
     }
     setTaskList([...taskList, task])
-  }
+  };
 
   const deleteItem = (id) => {
     const remaining = taskList.filter(task => task.id !== id);
     setTaskList(remaining);
+  }
+
+  const toggleCompleted = (id) => {
+    const updatedList = taskList.map(task => {
+      if (task.id === id) {
+        return { ...task, completed: !task.completed }
+      }
+      return task
+    })
+    setTaskList(updatedList);
   }
 
   const tasks = taskList.map(({ id, name, completed }) => (
@@ -33,7 +43,8 @@ function App({ data }) {
       id={id}
       name={name}
       completed={completed}
-      deleteItem={deleteItem} />));
+      deleteItem={deleteItem}
+      toggleCompleted={toggleCompleted} />));
 
   return (
     <div className="App">
