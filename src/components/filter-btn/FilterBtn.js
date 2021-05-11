@@ -6,6 +6,7 @@ function FilterBtn({ name, filterItems, filterBy }) {
         <button
             className={`${active ? 'btn__filter-active' : ''} btn btn__filter`}
             aria-pressed={active}
+            aria-label={`filter ${name} items`}
             onClick={() => filterItems(name)}>{name}</button>
     )
 }

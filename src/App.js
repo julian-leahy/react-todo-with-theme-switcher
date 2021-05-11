@@ -22,6 +22,10 @@ function App({ data }) {
 
   const numbTasks = taskList.length;
 
+  /**
+   * add a new todo item
+   * @param {string} name 
+   */
   const newTask = (name) => {
     const task = {
       id: nanoid(),
@@ -31,11 +35,19 @@ function App({ data }) {
     setTaskList([...taskList, task])
   };
 
+  /**
+   * delete a todo item by unique id
+   * @param {string} id 
+   */
   const deleteItem = (id) => {
     const remaining = taskList.filter(task => task.id !== id);
     setTaskList(remaining);
   }
 
+  /**
+   * toggle completed boolean
+   * @param {string} id 
+   */
   const toggleCompleted = (id) => {
     const updatedList = taskList.map(task => {
       if (task.id === id) {
@@ -46,6 +58,9 @@ function App({ data }) {
     setTaskList(updatedList);
   }
 
+  /**
+   * clear all completed items
+   */
   const clearCompleted = () => {
     const clearAll = taskList.map(task => {
       if (task.completed) {
@@ -56,6 +71,10 @@ function App({ data }) {
     setTaskList(clearAll);
   }
 
+  /**
+   * filter items by all, active or completed
+   * @param {string} filter 
+   */
   const filterItems = (filter) => {
     setFilterBy(filter);
   }

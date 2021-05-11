@@ -1,7 +1,6 @@
 import './TodoItem.css';
 
 function TodoItem({ id, name, completed, deleteItem, toggleCompleted }) {
-
     return (
         <li className="todo-item item">
             <div className="custom-cb">
@@ -16,7 +15,12 @@ function TodoItem({ id, name, completed, deleteItem, toggleCompleted }) {
             </div>
             <button
                 className="btn btn__delete"
-                onClick={() => deleteItem(id)}></button>
+                aria-label="delete item"
+                onClick={() => deleteItem(id)}>
+                <span className="visually-hidden">
+                    Delete an item
+                    </span>
+            </button>
         </li>
     )
 }

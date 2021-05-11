@@ -25,7 +25,12 @@ function FormInput({ newTask }) {
                 placeholder="Create a new todo..."
                 value={todoText}
                 onChange={handleChange} />
-            <button className="btn btn__add" type="submit">Add</button>
+            <button
+                className="btn btn__add"
+                aria-label="Add a new todo item"
+                type="submit">
+                Add
+            </button>
         </form>
     )
 }
