@@ -6,6 +6,7 @@ import Header from './components/header/Header';
 import ListFooter from './components/list-footer/ListFooter';
 import TodoItem from './components/todo-item/TodoItem';
 import { nanoid } from 'nanoid';
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 
 const FILTER = {
   all: () => true,
@@ -21,8 +22,17 @@ function App() {
 
   const [taskList, setTaskList] = useState(INITIALSTATE);
   const [filterBy, setFilterBy] = useState('all');
+  //const [foo, setFoo] = useState(taskList)
 
   const numbTasks = taskList.length;
+
+  const handleOnDragEnd = (result) => {
+    if (!result.destination) return;
+    const items = Array.from(taskList);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+    setTaskList(items);
+  }
 
   useEffect(() => {
     localStorage.setItem('todoList', JSON.stringify(taskList));
@@ -85,26 +95,39 @@ function App() {
     setFilterBy(filter);
   }
 
-  const tasks = taskList.filter(FILTER[filterBy]).map(({ id, name, completed }) => (
+  const tasks = taskList.filter(FILTER[filterBy]).map(({ id, name, completed }, index) =>
+  (
     <TodoItem
       key={id}
+      index={index}
       id={id}
       name={name}
       completed={completed}
       deleteItem={deleteItem}
-      toggleCompleted={toggleCompleted} />));
+      toggleCompleted={toggleCompleted} />
+  )
+  )
 
   return (
     <div className="App">
       <div className="hero"></div>
       <div className="container">
+
         <Header />
         <div className="todo">
           <FormInput newTask={newTask} />
         </div>
-        <ul className="todo-list">
-          {tasks}
-        </ul>
+        <DragDropContext onDragEnd={handleOnDragEnd}>
+          <Droppable droppableId="todos">
+            {(provided) =>
+              <ul className="todo-list" {...provided.droppableProps}
+                ref={provided.innerRef}>
+                {tasks}
+                {provided.placeholder}
+              </ul>
+            }
+          </Droppable>
+        </DragDropContext>
         {
           numbTasks > 0 && <ListFooter numbTasks={numbTasks} clearCompleted={clearCompleted} />
         }
@@ -116,6 +139,7 @@ function App() {
             ))
           }
         </div>
+
       </div>
     </div>
   );
